@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Registro Escolar</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>📚 Registro Escolar</h1>
+      <p>Gestiona años escolares, materias y alumnos con almacenamiento local.</p>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Registrar año escolar</h2>
+        <form id="year-form" class="grid-form">
+          <label>
+            Nombre del año
+            <input id="year-name" type="text" placeholder="Ej: 2026" required />
+          </label>
+          <button type="submit">Guardar año</button>
+        </form>
+        <ul id="year-list" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Registrar materia</h2>
+        <form id="subject-form" class="grid-form">
+          <label>
+            Nombre de la materia
+            <input id="subject-name" type="text" placeholder="Ej: Matemática" required />
+          </label>
+          <label>
+            Año escolar
+            <select id="subject-year" required></select>
+          </label>
+          <button type="submit">Guardar materia</button>
+        </form>
+        <ul id="subject-list" class="list"></ul>
+      </section>
+
+      <section class="card">
+        <h2>Registrar alumno</h2>
+        <form id="student-form" class="grid-form">
+          <label>
+            Nombre completo
+            <input id="student-name" type="text" placeholder="Ej: Ana Pérez" required />
+          </label>
+          <label>
+            Año escolar
+            <select id="student-year" required></select>
+          </label>
+          <button type="submit">Guardar alumno</button>
+        </form>
+        <ul id="student-list" class="list"></ul>
+      </section>
+
+      <section class="card full-width">
+        <h2>Página principal: alumnos y materias que reciben</h2>
+        <div id="dashboard"></div>
+      </section>
+    </main>
+
+    <template id="empty-state">
+      <p class="empty">Aún no hay datos registrados.</p>
+    </template>
+
+    <script src="script.js"></script>
+  </body>
+</html>
